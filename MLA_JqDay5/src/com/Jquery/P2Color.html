@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+<script>
+$(document).ready(function(){
+	$("#red").click(function(){
+		document.bgColor="red";
+	})
+	$("#blue").click(function(){
+		document.bgColor="blue";
+	})
+	$("#green").click(function(){
+		document.bgColor="green";
+	})
+	$("#yellow").click(function(){
+		document.bgColor="yellow";
+	})
+	
+})
+</script>
+</head>
+<body>
+<select id="chcolor">
+<option id="red">Red</option>
+<option id="blue">Blue</option>
+<option id="green">Green</option>
+<option id="yellow">Yellow</option>
+</select>
+</body>
+</html>

@@ -1,0 +1,139 @@
+   <!DOCTYPE html>
+<html>
+<head>
+<script>
+	function leave() {
+		if (frmleave.leaveid.value=="") {
+			document.getElementById("error1").innerHTML="Please select leave ID";
+			return;
+		} else {
+			document.getElementById("error1").innerHTML="";
+		}
+		if (frmleave.managername.value=="") {
+			document.getElementById("error2").innerHTML="Please select Manager name";
+			return;
+		} else {
+			document.getElementById("error2").innerHTML="";
+		}
+		
+		if (frmleave.stdate.value=="") {
+			document.getElementById("error3").innerHTML="Please select leave Start date";
+			return;
+		} else {
+			document.getElementById("error3").innerHTML="";
+		}		
+		if (frmleave.enddate.value=="") {
+			document.getElementById("error4").innerHTML="Please select leave End date";
+			return;
+		} else {
+			document.getElementById("error4").innerHTML="";
+		}
+		
+		    var stdate = frmleave.stdate.value;
+	        var enddate = frmleave.edate.value;
+	        var diffInMs = Date.parse(enddate) - Date.parse(stdate);
+	        var days = diffInMs / 1000 / 60 / 60 / 24;
+	        days++;
+	        frmleave.noofdays.value = days;       
+		
+		
+	}
+</script>
+<meta charset="ISO-8859-1">
+<title>Leave Form</title>
+</head>
+<body>
+	<form name="frmleave">
+		<table border="3px" align="center">
+			<tr>
+				<th colspan="2">
+					Leave Application
+				</th>
+			</tr>
+			<tr>
+				<th>Leave ID :</th>
+				<td>
+				    <select name="leaveid">
+					<option value="CLID1">casualleaveID 1</option>
+					<option value="CLID2">casualleaveID 2</option>
+					<option value="CLID3">casualleaveID 3</option>
+					<option value="CLID4">casualleaveID 4</option>
+					</select>
+					<span id="error1" style="color:red;"></span>
+				</td>
+			</tr>
+			<tr>
+				<th>Manager Name : </th>
+				<td>
+					<select name="managername">
+					<option value="m1">Manager 1</option>
+					<option value="m2">Manager 2</option>
+					<option value="m3">Manager 3</option>
+					<option value="m4">Manager 4</option>
+					</select>
+					<span id="error2" style="color:red;"></span>
+				</td>
+			</tr>
+			
+			<tr>
+				<th>Leave start date : </th>
+				<td>
+					<input type="date" id="dateInput1" name="stdate" />
+					<span id="error3" style="color:red;"></span>
+				</td>
+			</tr>
+			<tr>
+				<th>Leave End date : </th>
+				<td>
+					<input type="date" id="dateInput2" name="edate" />
+					<span id="error4" style="color:red;"></span>
+				</td>
+			</tr>			
+						<tr>
+				<th>Number of days : </th>
+				<td>
+					<input type="text" name="noofdays" readonly="readonly" />
+					<span id="error5" style="color:red;"></span>
+				</td>
+			</tr>
+			
+			<tr>
+				<th>Leave type : </th>
+				<td>
+					<select>
+					<option>EL</option>
+					<option>PL</option>
+					<option>CL</option>
+					<option>ML</option>
+					</select>
+					<span id="error2" style="color:red;"></span>
+				</td>
+			</tr>
+			
+			<tr>
+			<th>Leave Status :</th>
+			<td>
+			<input type="text" name="leavestatus" readonly="readonly" />
+			</td>
+			</tr>
+			
+			<tr>
+			<th>Leave Applied on :</th>
+			<td><input type="text" name="leaveappliedon" readonly="readonly" />
+			</tr>
+			
+			<tr>
+			<th>Manager Comment :</th>
+			<td><input type="text" name="Managercomment" readonly="readonly" />
+			</tr>
+			
+			<tr>
+				<th colspan="2">
+					<input type="button" value="Submit" onclick="leave()" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="reset" value="Reset" />
+				</th>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

@@ -1,0 +1,53 @@
+.myhotelClass {
+    text-align: center;
+    font-size: 300%;
+    color: black;
+    font-family: lucida handwriting, cursive;
+    font-weight: 5px;
+    background-color:white;
+}
+
+body {
+    background-image: url(".jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.textClass {
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 30px;
+    color: black;
+    font-weight:5px ;
+    background-color: white ;
+}
+table {
+  border-collapse: collapse;
+  width: 600px;
+  align: center;
+  
+  
+}
+
+th, td {
+  text-align: left;
+  padding: 5px;
+}
+
+tr:nth-child(even){background-color: #d0e1e1}
+tr:nth-child(odd){background-color: white}
+tr:hover {background-color: #669999;}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 1px solid #555555;
+  border-radius: 5px;
+  width: 100px;
+  height: 50px;
+}
+
+.button1:hover {
+  background-color: #555555;
+  color: white;
+}

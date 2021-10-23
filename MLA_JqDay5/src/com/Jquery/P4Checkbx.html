@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script >
+$(document).ready(function(){
+	$("#n1").change(function(){
+		if($("#n1").is(":checked"))
+			{
+			$("#result").text("Bharath is present");
+			}
+		else {
+			$("#result").text("Bharath is Absent");
+		}
+	})
+	
+})</script>
+</head>
+<body>
+<label>Attendance check :</label><br/>
+<label>Bharath :</label><input type="checkbox" id="n1"/>
+<label>Number 2 :</label><input type="checkbox" id="n2"/>
+
+<label id="result"></label>
+
+</body>
+</html>

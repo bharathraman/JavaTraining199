@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script>
+$(document).ready(function(){
+	
+	$("#clickin").click(function(){
+		var user=$("#name").val()
+		alert("Welcome "+user);
+		$("#printhere").text("Welcome "+user);
+	})
+})
+</script>
+</head>
+<body>
+<label>Enter your name :</label>
+<input type="text" id="name" placehlder="Enter your name" /><br/>
+<input type="button" id="clickin" value="clickIn"/>
+<p id="printhere"></p>
+</body>
+</html>

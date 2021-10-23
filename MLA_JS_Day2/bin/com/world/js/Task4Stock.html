@@ -1,0 +1,126 @@
+   <!DOCTYPE html>
+<html>
+<head>
+<script>
+	function leave() {
+		if (frmleave.leaveid.value=="") {
+			document.getElementById("error1").innerHTML="Please select leave ID";
+			return;
+		} else {
+			document.getElementById("error1").innerHTML="";
+		}
+		if (frmleave.managername.value=="") {
+			document.getElementById("error2").innerHTML="Please select Manager name";
+			return;
+		} else {
+			document.getElementById("error2").innerHTML="";
+		}
+		
+		if (frmleave.stdate.value=="") {
+			document.getElementById("error3").innerHTML="Please select leave Start date";
+			return;
+		} else {
+			document.getElementById("error3").innerHTML="";
+		}
+		
+		if (frmleave.enddate.value=="") {
+			document.getElementById("error4").innerHTML="Please select leave End date";
+			return;
+		} else {
+			document.getElementById("error4").innerHTML="";
+		}
+		var date1,date2;
+		date1= parseInt(frmleave.stdate.value);
+		date2= parseInt(frmleave.enddate.value);
+	
+		var no_of_days = date2 -date1;
+		frmleave.noofdays.value= no_of_days;
+		
+		if (frmleave.enddate.value > frmleave.stdate.value) {
+			if(no_of_days <=3){
+			frmleave.leavestatus.value="Approved";
+			}
+			return;
+		} else{
+			document.getElementById("error2").innerHTML="";
+		}
+		
+		frmleave.leaveappliedon.value= date1;
+	}
+</script>
+<meta charset="ISO-8859-1">
+<title>Leave Form</title>
+</head>
+<body>
+	<form name="frmleave">
+		<table border="3px" align="center">
+			<tr>
+				<th colspan="2">
+					Stock 
+				</th>
+			</tr>
+			<tr>
+				<th>Stock ID :</th>
+				<td>
+				    <select name="leaveid">
+					<option value="CLID1">casualID 1</option>
+					<option value="CLID2">casualID 2</option>
+					<option value="CLID3">casualID 3</option>
+					<option value="CLID4">casualID 4</option>
+					</select>
+					<span id="error1" style="color:red;"></span>
+				</td>
+			</tr>
+			<tr>
+				<th>Item Name : </th>
+				<td>
+					
+					<span id="error2" style="color:red;"></span>
+				</td>
+			</tr>
+			
+			<tr>
+				<th>Quantity : </th>
+				<td>
+					<input type="date" name="stdate"/>
+					<span id="error3" style="color:red;"></span>
+				</td>
+			</tr>
+			<tr>
+				<th>Description: </th>
+				<td>
+					<input type="date" name="enddate"/>
+					<span id="error4" style="color:red;"></span>
+				</td>
+			</tr>		
+			<tr>
+				<th>City :</th>
+				<td>
+				    <select name="leaveid">
+					<option value="CLID1">Mysuru</option>
+					<option value="CLID2">Bengaluru</option>
+					<option value="CLID3">Mangaluru</option>
+					<option value="CLID4">Hubbali</option>
+					</select>
+					<span id="error1" style="color:red;"></span>
+				</td>
+			</tr>	
+				<tr>
+				<th>Zip code: </th>
+				<td>
+					<input type="text" name="zipcode" pattern="[0-9]{6}" required />
+					<span id="error5" style="color:red;"></span>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<th colspan="2">
+					<input type="button" value="Submit" onclick="leave()" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="reset" value="Reset" />
+				</th>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

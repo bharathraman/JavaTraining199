@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script >
+$(document).ready(function(){
+	$("#add").click(function(){
+		var a = parseInt($('#n1').val(), 10),
+	       b = parseInt($('#n2').val(), 10);
+		var result= a + b;
+		alert("sum of"+a+" and "+b+" is : "+result)
+		$("#result").text(result);
+	})
+	
+	$("#mult").click(function(){
+		var a = parseInt($('#n1').val(), 10),
+	       b = parseInt($('#n2').val(), 10);
+		var result= a * b;
+		alert("Product of"+a+" and "+b+" is : "+result)
+		$("#result").text(result);
+	})
+	
+})
+
+</script>
+</head>
+<body>
+<label>Number 1 :</label><input type="text" id="n1"/>
+<label>Number 2 :</label><input type="text" id="n2"/><br/><br/>
+
+<input type="button" value="Add" id="add"/>
+<input type="button" value="Multiply" id="mult"/>
+<br/>
+<label>Sum :</label>
+
+<label id="result"></label>
+
+</body>
+</html>
