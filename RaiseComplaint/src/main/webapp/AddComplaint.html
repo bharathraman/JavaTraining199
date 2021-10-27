@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<jsp:include page="menu.jsp"/>
+<center>
+<form action="AddComplaints.jsp">
+<h2>Add complaint details here :</h2>
+<table border=0px color="white" align="center" padding=5px>
+<tr>
+<th>Complaint ID:</th>
+<td> <input type="number" name="cid"/></td>
+</tr>
+
+<tr>
+<th>Complaint Type:</th>
+<td><input type="text" name="ctype"/></td>
+</tr>
+<tr>
+<th>Complaint Description:</th>
+<td> <input type="text" name="cdesc"/></td>
+</tr>
+
+<tr>
+<th>Complaint Date:</th>
+<td><input type="date" name="cdate"/></td>
+</tr>
+
+<tr>
+<th>Severity:</th>
+<td> <input type="text" name="severity"/><br></td>
+</tr>
+<tr>
+<th>Status:</th>
+<td> <input type="text" name="status"/><br></td>
+</tr>
+
+<tr >
+<td align="center"></td>
+</tr>
+</table>
+
+<input type="submit" value="Add Complaint"/>
+</form>
+</center>
+</body>
+</html>
